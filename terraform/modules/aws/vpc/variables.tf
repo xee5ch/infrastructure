@@ -35,6 +35,18 @@ variable "enable_vpn_gateway" {
     default = false
 }
 
+variable "one_nat_gateway_per_az" {
+    description = "Flag to enable one NAT Gateway per availability zone."
+    type = bool
+    default = false
+}
+
+variable "single_nat_gateway" {
+    description = "Flag to enable a single VPN Gateway for the VPC, not the default one per subnet."
+    type = bool
+    default = false
+}
+
 variable "tags" {
     description = "Any additional tags for the VPC and nested resources."
     type = map(string)

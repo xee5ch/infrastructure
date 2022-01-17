@@ -13,3 +13,11 @@ output "id" {
 output "name" {
     value = module.vpc.name
 }
+
+output "private_subnets" {
+    value = coalesce(module.vpc.private_subnets, [])
+}
+
+output "public_subnets" {
+    value = coalesce(module.vpc.public_subnets, [])
+}
